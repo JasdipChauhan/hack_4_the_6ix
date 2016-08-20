@@ -9,8 +9,29 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.jasdipc.hack_the_6ix.LoginActivity">
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:inputType="textPersonName"
+        android:text="Username"
+        android:ems="10"
+        android:hint="Username"
+        android:id="@+id/input_username_field"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_username_field"
+        android:layout_alignParentLeft="true"
+        android:text="Join as Guest"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_username_field"
+        android:layout_alignParentRight="true"
+        android:text="Host a Game"/>
 </RelativeLayout>
