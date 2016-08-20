@@ -2,7 +2,12 @@ package com.example.jasdipc.hack_the_6ix;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.util.Log;
+import android.widget.Toast;
 
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.nearby.Nearby;
 import com.google.android.gms.nearby.connection.Connections;
 
 /**
@@ -30,13 +35,31 @@ public class NearbyPlayer implements Connections.MessageListener,
         apiClient.connect();
     }
 
+    public void discover() {
+
+        String serviceID = mContext.getString(R.string.service_id);
+
+        Nearby.Connections.startDiscovery(apiClient.getmGoogleApiClient(), serviceID, 0L, this).setResultCallback(new ResultCallback<Status>() {
+            @Override
+            public void onResult(Status status) {
+                if (status.isSuccess()) {
+                    Toast.makeText(mContext, "Discovering", Toast.LENGTH_SHORT).show();
+                } else {
+                    Log.i("discovering", "failed");
+                }
+            }
+        });
+
+    }
+
+
     @Override
-    public void onEndpointFound(String s, String s1, String s2, String s3) {
-        
+    public void onEndpointFound(String endpointID, String deviceID, String serviceID, String name) {
+
     }
 
     @Override
-    public void onEndpointLost(String s) {
+    public void onEndpointLost(String endpointID) {
 
     }
 
