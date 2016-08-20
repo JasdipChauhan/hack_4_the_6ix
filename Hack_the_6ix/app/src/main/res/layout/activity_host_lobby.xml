@@ -9,4 +9,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.jasdipc.hack_the_6ix.HostLobby">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_of_hosts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
 </RelativeLayout>

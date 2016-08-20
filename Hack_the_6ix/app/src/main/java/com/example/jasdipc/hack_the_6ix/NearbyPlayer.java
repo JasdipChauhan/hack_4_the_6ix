@@ -9,6 +9,7 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.nearby.Nearby;
 import com.google.android.gms.nearby.connection.Connections;
+import com.google.android.gms.nearby.connection.ConnectionsStatusCodes;
 
 /**
  * Created by JasdipC on 2016-08-20.
@@ -55,6 +56,19 @@ public class NearbyPlayer implements Connections.MessageListener,
 
     @Override
     public void onEndpointFound(String endpointID, String deviceID, String serviceID, String name) {
+        Nearby.Connections.sendConnectionRequest(apiClient.getmGoogleApiClient(), usersName, endpointID, null, new Connections.ConnectionResponseCallback() {
+            @Override
+            public void onConnectionResponse(String remoteEndpointID, Status status, byte[] payload) {
+                switch (status.getStatusCode()) {
+                    case ConnectionsStatusCodes.STATUS_OK:
+                        Toast.makeText(mContext, "Connection Successful!", Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        Toast.makeText(mContext, "No response", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        }, this);
 
     }
 
