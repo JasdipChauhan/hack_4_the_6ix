@@ -65,4 +65,13 @@ public class APIClient implements GoogleApiClient.ConnectionCallbacks, GoogleApi
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         isConnected = false;
     }
+
+    public GoogleApiClient getmGoogleApiClient() {
+        return mGoogleApiClient;
+    }
+
+    public boolean isConnected() {
+        isConnected = mGoogleApiClient.isConnected();
+        return isConnected;
+    }
 }

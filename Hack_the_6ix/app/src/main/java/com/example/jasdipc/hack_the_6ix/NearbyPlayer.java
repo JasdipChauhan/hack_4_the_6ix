@@ -32,7 +32,7 @@ public class NearbyPlayer implements Connections.MessageListener,
 
     @Override
     public void onEndpointFound(String s, String s1, String s2, String s3) {
-
+        
     }
 
     @Override
