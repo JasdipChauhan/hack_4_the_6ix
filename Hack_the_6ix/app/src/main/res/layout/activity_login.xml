@@ -26,7 +26,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/input_username_field"
         android:layout_alignParentLeft="true"
-        android:text="Join as Guest"/>
+        android:text="Join as Player"
+        android:id="@+id/player_button"
+        android:onClick="@+id/player_button_clicked"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -34,5 +36,6 @@
         android:layout_below="@id/input_username_field"
         android:layout_alignParentRight="true"
         android:text="Host a Game"
-        android:onClick="host_game_clicked"/>
+        android:id="@+id/host_button"
+        android:onClick="host_button_clicked"/>
 </RelativeLayout>
