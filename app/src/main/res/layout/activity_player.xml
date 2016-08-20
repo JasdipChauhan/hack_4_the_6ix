@@ -48,14 +48,11 @@
             android:layout_gravity="center_horizontal" />
 
         <ImageView
-            android:layout_width="10dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/image"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.03"
-            android:maxHeight="401px"
-            android:maxWidth="401px"
-            android:minHeight="400px"
-            android:minWidth="400px" />
+            android:nestedScrollingEnabled="false" />
     </LinearLayout>
 </RelativeLayout>
